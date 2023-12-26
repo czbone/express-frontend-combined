@@ -74,8 +74,10 @@ Frontend redirects API(`/api`) access at port 3001 to Backend at port 3000 by Vi
 ### Combine Frontend and Backend as one product
 
 Build Frontend and Backend in order, or execute below commands in Backend project.
+The destnations locate in `dist` and `frontend/dist`.
 
 ```
+yarn install
 yarn build:all
 yarn start
 ```
