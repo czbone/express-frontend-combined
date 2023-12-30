@@ -4,9 +4,9 @@
       <h2>メモリスト</h2>
       <QList class="rounded-borders q-mb-lg" bordered separator>
         <QItem v-for="(note, index) in notes" :key="index">
-          <QItemSection>{{ note }}</QItemSection>
+          <QItemSection>{{ note.message }}</QItemSection>
           <QItemSection side>
-            <QBtn color="negative" @click="removeNote(index)">削除</QBtn>
+            <QBtn color="negative" @click="removeNote(note.id)">削除</QBtn>
           </QItemSection>
         </QItem>
       </QList>
@@ -26,10 +26,12 @@
 <script setup lang="ts">
 import { useNoteStore } from '@/stores/note'
 import { ref } from 'vue'
+import { storeToRefs } from 'pinia'
 
-const noteStore = useNoteStore()
-const notes = noteStore.notes
 const newNote = ref('')
+const noteStore = useNoteStore()
+const { notes } = storeToRefs(noteStore)
+noteStore.getAll()
 
 const addNote = () => {
   if (newNote.value.trim()) {
@@ -37,8 +39,8 @@ const addNote = () => {
     newNote.value = ''
   }
 }
-const removeNote = (index: number) => {
-  noteStore.removeNote(index)
+const removeNote = (id: string) => {
+  noteStore.removeNote(id)
 }
 </script>
 <style scoped>

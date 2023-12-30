@@ -1,15 +1,55 @@
+import axios from 'axios'
 import { defineStore } from 'pinia'
+import config from '@/config'
+
+type Note = {
+  id: string
+  message: string
+}
 
 export const useNoteStore = defineStore('note', {
-  state: () => ({
-    notes: ['サンプル1', 'サンプル2']
-  }),
+  state: () => {
+    return {
+      notes: [] as Note[]
+    }
+  },
   actions: {
-    addNote(note: string) {
-      this.notes.push(note)
+    async addNote(message: string) {
+      try {
+        await axios.post(config.api_note, {
+          message: message
+        })
+
+        // 一覧再取得
+        this.getAll()
+      } catch (err) {
+        if (axios.isAxiosError(err)) {
+          console.log(err)
+        }
+      }
     },
-    removeNote(index: number) {
-      this.notes.splice(index, 1)
+    async removeNote(id: string) {
+      console.log(config.api_note + `/${id}`)
+      try {
+        await axios.delete(config.api_note + `/${id}`)
+
+        // 一覧再取得
+        this.getAll()
+      } catch (err) {
+        if (axios.isAxiosError(err)) {
+          console.log(err)
+        }
+      }
+    },
+    async getAll() {
+      try {
+        const response = await axios.get(config.api_note_list)
+        this.notes = response.data
+      } catch (err) {
+        if (axios.isAxiosError(err)) {
+          console.log(err)
+        }
+      }
     }
   }
 })
