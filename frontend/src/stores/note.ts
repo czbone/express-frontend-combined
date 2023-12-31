@@ -29,7 +29,6 @@ export const useNoteStore = defineStore('note', {
       }
     },
     async removeNote(id: string) {
-      console.log(config.api_note + `/${id}`)
       try {
         await axios.delete(config.api_note + `/${id}`)
 
@@ -43,7 +42,7 @@ export const useNoteStore = defineStore('note', {
     },
     async getAll() {
       try {
-        const response = await axios.get(config.api_note_list)
+        const response = await axios.get(config.api_note)
         this.notes = response.data
       } catch (err) {
         if (axios.isAxiosError(err)) {
