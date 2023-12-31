@@ -1,5 +1,6 @@
 import dotenv from 'dotenv'
 import express from 'express'
+import 'module-alias/register'
 import path from 'path'
 import router from './routes'
 
