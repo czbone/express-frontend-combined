@@ -14,7 +14,8 @@
       ],
       "cwd": "${workspaceRoot}",
       "internalConsoleOptions": "openOnSessionStart",
-      "outputCapture": "std"
+      "outputCapture": "std",
+      "preLaunchTask": "tsc: watch"
     }
   ]
 }
