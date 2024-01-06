@@ -47,7 +47,7 @@ Build Frontend in advance.
 yarn install
 ```
 
-1. Launch from command line or online debuggging by **Start server** on **Run and Debug view** in VSCode.
+1. Launch from command line or online debuggging by **Start Server** on **Run and Debug view** in VSCode.
 
 ```
 # Debugging
