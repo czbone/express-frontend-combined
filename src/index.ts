@@ -1,6 +1,7 @@
 import dotenv from 'dotenv'
 import express from 'express'
 import 'module-alias/register'
+import morgan from 'morgan'
 import path from 'path'
 import router from './routes'
 
@@ -9,6 +10,9 @@ dotenv.config()
 
 const port = process.env.SERVER_PORT
 const app = express()
+
+// デバッグ時ログ出力
+if (process.env.NODE_ENV !== 'production') app.use(morgan('dev'))
 
 app.use(express.json())
 
