@@ -47,7 +47,7 @@ Build Frontend in advance.
 yarn install
 ```
 
-1. Launch from command line or online debuggging by **Start Server** on **Run and Debug view** in VSCode.
+1. Launch from command line or online debuggging by **Launch Server** on **Run and Debug view** in VSCode.
 
 ```
 # Debugging
@@ -67,9 +67,9 @@ If launch Frontend and Backend separately, Frontend uses port 3001 and Backend u
 Test Frontend and Backend integratedly at port 3001 from Web browser
 Frontend redirects API(`/api`) access at port 3001 to Backend at port 3000 by Vite proxy.
 
-1. Launch Backend(yarn dev)
-2. Launch Frontend(yarn dev)
-3. Launch VSCode in Frontend project, and debug Frontend by **Launch Chrome** on **Run and Debug view**.
+1. Install packages(yarn install:all)
+2. Launch Frontend(cd frontend && yarn dev)
+3. Launch VSCode in Backend project, and debug Frontend and Backend by **Full-Stack** on **Run and Debug view**.
 
 ### Combine Frontend and Backend as one product
 

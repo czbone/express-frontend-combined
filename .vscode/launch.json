@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Start Server",
+      "name": "Launch Server",
       "type": "node",
       "request": "launch",
       "args": [
@@ -16,6 +16,20 @@
       "internalConsoleOptions": "openOnSessionStart",
       "outputCapture": "std",
       "preLaunchTask": "tsc: watch"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome",
+      "url": "http://localhost:3001",
+      "webRoot": "${workspaceFolder}/frontend"
     }
-  ]
+  ],
+  "compounds": [
+    {
+       "name": "Full-Stack",
+       "configurations": ["Launch Server", "Launch Chrome"],
+       "stopAll": true
+    }
+ ]
 }
