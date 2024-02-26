@@ -77,7 +77,7 @@ Build Frontend and Backend in order, or execute below commands in Backend projec
 The destnations locate in `dist` and `frontend/dist`.
 
 ```
-yarn install
+yarn install:all
 yarn build:all
 yarn start
 ```
