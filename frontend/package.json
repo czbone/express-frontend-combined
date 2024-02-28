@@ -16,13 +16,13 @@
     "axios": "^1.6.7",
     "pinia": "^2.1.7",
     "quasar": "^2.14.5",
-    "vue": "^3.4.19",
+    "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
     "@quasar/vite-plugin": "^1.6.0",
     "@rushstack/eslint-patch": "^1.7.2",
-    "@types/node": "^20.11.20",
+    "@types/node": "^20.11.21",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^12.0.0",

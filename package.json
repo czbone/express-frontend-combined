@@ -1,6 +1,6 @@
 {
   "name": "express-frontend-combined",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "TypeScript based web application with Express backend and Vue3, Quasar frontend",
   "author": "czbone",
   "private": true,
@@ -32,10 +32,10 @@
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/morgan": "^1.9.9",
-    "@types/node": "^20.11.20",
+    "@types/node": "^20.11.21",
     "@types/shelljs": "^0.8.15",
-    "@typescript-eslint/eslint-plugin": "^7.0.2",
-    "@typescript-eslint/parser": "^7.0.2",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "nodemon": "^3.1.0",
